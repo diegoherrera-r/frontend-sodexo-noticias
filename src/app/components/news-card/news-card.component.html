@@ -1,0 +1,22 @@
+<div *ngFor="let article of articles" class="card-container shadow-lg w-100">
+  <mat-card class="p-3 border border-1 border-opacity-10 border-black rounded-4">
+    <mat-card-header>
+      <mat-card-title class="fw-bold fs-2 mb-3">{{article.title}}</mat-card-title>
+      <mat-card-subtitle class="fst-italic">{{article.news_site}}</mat-card-subtitle>
+      <mat-card-subtitle>{{article.published_at | date: 'dd MMM yyyy'}}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="mt-3 rounded-5 p-2" mat-card-image src="{{article.image_url}}">
+    <mat-card-content class="mt-3 mb-3">
+      <p>
+        {{article.summary}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="mt-2">
+      <button mat-button class="me-4 button-left text-white" (click)="goToNews(article)">Ir a la noticia</button>
+      <button mat-button class="button-right text-white"><mat-icon>add_circle_outline</mat-icon>Agregar a favoritos</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+

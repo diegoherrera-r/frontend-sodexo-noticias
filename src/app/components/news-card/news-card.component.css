@@ -1,0 +1,33 @@
+.card-container {
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: auto;
+}
+
+.button-left {
+  background-color: #6c757d;
+}
+
+.button-right {
+  background-color: #176B87;
+}
+
+.button-left:focus {
+  background-color: #191717;
+}
+
+.button-left:hover {
+  background-color: #191717;
+}
+
+.button-right:focus {
+  background-color: #053B50;
+}
+
+.button-right:hover {
+  background-color: #053B50;
+}
