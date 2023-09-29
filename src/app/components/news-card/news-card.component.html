@@ -1,4 +1,18 @@
-<div *ngFor="let article of articles" class="card-container shadow-lg w-100">
+<form [formGroup]="searchForm">
+  <mat-form-field>
+    <button *ngIf="searchText" mat-button matSuffix (click)="searchText = ''">
+      <mat-icon>cancel</mat-icon>
+    </button>
+    <mat-label>Buscar</mat-label>
+    <input
+      matInput
+      aria-label="Articulo"
+      [(ngModel)]="searchText"
+      formControlName="searchBar">
+  </mat-form-field>
+</form>
+
+<div *ngFor="let article of articles | searchFilter: searchText; index as i" class="card-container shadow-lg w-100">
   <mat-card class="p-3 border border-1 border-opacity-10 border-black rounded-4">
     <mat-card-header>
       <mat-card-title class="fw-bold fs-2 mb-3">{{article.title}}</mat-card-title>
@@ -13,10 +27,8 @@
     </mat-card-content>
     <mat-card-actions class="mt-2">
       <button mat-button class="me-4 button-left text-white" (click)="goToNews(article)">Ir a la noticia</button>
-      <button mat-button class="button-right text-white"><mat-icon>add_circle_outline</mat-icon>Agregar a favoritos</button>
+      <button *ngIf="showButton" mat-button class="button-right text-white" (click)="addFavorite(article)"><mat-icon>add_circle_outline</mat-icon>Agregar a favoritos</button>
+      <button *ngIf="!showButton" mat-button class="ms-4 button-right text-white" (click)="removeFavorite(article.id_article)"><mat-icon>delete</mat-icon>Remover favorito</button>
     </mat-card-actions>
   </mat-card>
 </div>
-
-
-

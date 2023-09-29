@@ -8,7 +8,6 @@ import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { FavoriteNewsComponent } from './components/favorite-news/favorite-news.component';
 import { NewsCardComponent } from './components/news-card/news-card.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
@@ -18,6 +17,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HomeComponent,
     FavoriteNewsComponent,
     NewsCardComponent,
-    SearchBarComponent
+    SearchFilterPipe,
   ],
   imports: [
     AppRoutingModule,
@@ -38,8 +38,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatCardModule,
     MatButtonModule,
     MatPaginatorModule,
-    FormsModule,
     MatAutocompleteModule,
+    FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],

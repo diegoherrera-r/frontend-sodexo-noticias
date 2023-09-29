@@ -1,7 +1,6 @@
-<div class="container bg-primary">
+<div class="container w-auto">
   <h1 class="fs-2 fw-bold mb-5">Mis Favoritos</h1>
-  <app-search-bar></app-search-bar>
   <div class="mt-4 d-flex justify-content-center align-items-center">
-    <app-news-card></app-news-card>
+    <app-news-card [articles]="articles" [showButton]="showButton"></app-news-card>
   </div>
 </div>
