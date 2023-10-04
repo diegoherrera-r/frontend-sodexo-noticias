@@ -7,7 +7,7 @@ import {PaginatedArticleList} from "../models/paginated-article-list";
 })
 export class NewsService {
 
-  private readonly baseUrl: string = "https://api.spaceflightnewsapi.net/v4/articles"
+  baseUrl: string = "https://api.spaceflightnewsapi.net/v4/articles"
 
   offset = 0;
 
